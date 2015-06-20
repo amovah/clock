@@ -54,21 +54,30 @@ function clock() {
 	ctx.fill();
 
 	//Draw clock hands
-	var date = new Date(), minute = date.getMinutes(), hour = date.getHours();
+	var date = new Date(), minute = date.getMinutes(), hour = date.getHours(), second = date.getSeconds();
 	//Draw hour hand
 	ctx.beginPath();
-	ctx.lineWidth = 6;
+	ctx.lineWidth = 5;
+	ctx.lineJoin = 'round';
 	ctx.moveTo(250, 250);
-	ctx.lineTo(250 + Math.cos(radians * 30 * (hour - 3)) * (250 - 125),
-					250 + Math.sin(radians * 30 * (hour - 3)) * (250 - 125));
+	ctx.lineTo(250 + Math.cos(radians * 30 * (hour - 3)) * (250 - 100),
+					250 + Math.sin(radians * 30 * (hour - 3)) * (250 - 100));
 	ctx.stroke();
 	//Draw minute hand
 	ctx.beginPath();
-	ctx.lineWidth = 4;
+	ctx.lineWidth = 3;
 	ctx.lineJoin = 'round';
 	ctx.moveTo(250, 250);
-	ctx.lineTo(250 + Math.cos(radians * 6 * (minute - 15)) * (250 - 62.5),
-					250 + Math.sin(radians * 6 * (minute - 15)) * (250 - 62.5));
+	ctx.lineTo(250 + Math.cos(radians * 6 * (minute - 15)) * (250 - 70),
+					250 + Math.sin(radians * 6 * (minute - 15)) * (250 - 70));
+	ctx.stroke();
+	//Draw second hand
+	ctx.beginPath();
+	ctx.lineWidth = 2;
+	ctx.lineJoin = 'round';
+	ctx.moveTo(250, 250);
+	ctx.lineTo(250 + Math.cos(radians * 6 * (second - 15)) * (250 - 40),
+					250 + Math.sin(radians * 6 * (second - 15)) * (250 - 40));
 	ctx.stroke();
 
 	//Animation request
