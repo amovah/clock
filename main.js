@@ -32,6 +32,10 @@ function clock() {
 	ctx.fillText('Ali Movahedi, A Developer', 165, 220);
 
 	//Draw bigger dots
+	//The circle that dots is located
+	//Is like Trigonometric circle
+	//I've gotten coordiante of dots with
+	//Mathematical sine and cosine
 	ctx.beginPath();
 	ctx.fillStyle = '#5D440E';
 	for(var i = 0; i < 12; i++) {
@@ -43,6 +47,8 @@ function clock() {
 	ctx.fill();
 
 	//Draw smaller dots
+	//Like bigger one
+	//But in this case we need more dots
 	ctx.beginPath();
 	ctx.fillStyle = '#5D440E';
 	for(var i = 0; i < 60; i++) {
@@ -84,4 +90,5 @@ function clock() {
 	window.requestAnimationFrame(clock);
 }
 
+//Initial request
 window.requestAnimationFrame(clock);
