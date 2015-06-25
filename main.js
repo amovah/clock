@@ -60,7 +60,9 @@ function clock() {
 	ctx.fill();
 
 	//Draw clock hands
-	var date = new Date(), minute = date.getMinutes(), hour = date.getHours(), second = date.getSeconds();
+	var date = new Date(), second = date.getSeconds() + date.getMilliseconds() / 1000,
+			minute = date.getMinutes() + ( second / 0.6 / 100),
+			hour = date.getHours() + ( minute / 0.6 / 100);
 	//Draw hour hand
 	ctx.beginPath();
 	ctx.lineWidth = 5;
